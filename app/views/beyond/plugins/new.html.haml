@@ -1,0 +1,20 @@
+%h1 Plugins#new
+= form_for @plugin, :url => plugins_path, :html => { :multipart => true } do |form|
+  = form.label :name
+  = form.text_field :name
+  %br/
+  = form.label :description
+  = form.text_field :description
+  %br/
+  = form.label :public
+  = form.check_box :public
+  %br/
+  = form.label :archive
+  = form.file_field :archive
+  %br/
+  = form.label :tenant
+  %br/
+  - current_user.tenants.each do |tenant|
+    = form.radio_button(:tenant, tenant.name)+' '+tenant.name
+    %br/
+  = form.submit

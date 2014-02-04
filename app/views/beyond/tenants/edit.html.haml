@@ -1,0 +1,16 @@
+%h2= @tenant.name
+%br/
+= form_tag(tenant_path, method: :put) do
+  - @configs.each do |category|
+    %h3= category.first
+    %br/
+    - category.last.each do |config|
+      = label_tag config.first
+      = name = 'config_' + config.first;                                                                                                              |
+        case config.last['type']                                                                                                                      |
+        when 'string' then text_field_tag name, config.last['value']                                                                                  |
+        when 'int' then number_field_tag name, config.last['value']                                                                                   |
+        when 'bool' then radio_button_tag(name, 'true', config.last['value'])+' true'+radio_button_tag(name, 'false', !config.last['value'])+' false' |
+        end                                                                                                                                           |
+      %br/
+  = submit_tag

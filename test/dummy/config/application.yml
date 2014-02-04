@@ -1,0 +1,3 @@
+kamino_bin: /myr/kamino/kamino
+tenants_plugins_dir: /myr/plugins
+tenants_configs_dir: /myr/configs

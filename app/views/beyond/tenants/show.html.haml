@@ -1,0 +1,14 @@
+%h1= @tenant.name
+= link_to 'Change configurations', edit_tenant_path(@tenant)
+- if @tenant.working?
+  = button_to 'Stop tenant', action: :stop
+- else
+  = button_to 'Start tenant', action: :start
+
+%h3 Plugins
+- @tenant.plugins.each do |p|
+  = p.name
+  - if p.activated
+    = button_to 'Stop plugin', plugin_stop_path(p)
+  - else
+    = button_to 'Start plugin', plugin_start_path(p)
