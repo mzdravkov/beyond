@@ -1,5 +1,7 @@
 module Beyond
   class PluginsController < ApplicationController
+    before_filter :authenticate_user!
+
     def new
       @plugin = Plugin.new
     end
