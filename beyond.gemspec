@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Beyond::VERSION
   s.authors     = ["Mihail Zdravkov"]
   s.email       = ["mihail0zdravkov@gmail.com"]
-  s.homepage    = "http://github.com/mzdravkov"
+  s.homepage    = "http://github.com/mzdravkov/beyond"
   s.summary     = "Deploy applications at runtime with one button click. Is it any good: yes."
   s.description = "A gem that uses docker and https://github.com/mzdravkov/kamino to deploy applications by example on the run."
 
